@@ -1,0 +1,24 @@
+# EAIFCH - Ethical AI Framework for Cultural Heritage
+# Persistent Identifier: https://w3id.org/eaifch/
+# Author: Ahmed Benseddik
+# Version: 1.0
+# Date: May 2026
+
+Options +FollowSymLinks
+RewriteEngine on
+
+# Redirection par défaut → Documentation WIDOCO
+RewriteRule ^$ https://benseddikahmed-sudo.github.io/eaifch/ [R=302,L]
+
+# Redirections vers l'ontologie (versions lisibles)
+RewriteRule ^ontology$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.ttl [R=302,L]
+RewriteRule ^ontology\.ttl$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.ttl [R=302,L]
+RewriteRule ^ontology\.jsonld$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.jsonld [R=302,L]
+RewriteRule ^ontology\.rdf$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.rdf [R=302,L]
+
+# Documentation complète (WIDOCO)
+RewriteRule ^doc$ https://benseddikahmed-sudo.github.io/eaifch/ [R=302,L]
+RewriteRule ^doc/$ https://benseddikahmed-sudo.github.io/eaifch/ [R=302,L]
+
+# SPARQL examples
+RewriteRule ^sparql$ https://github.com/benseddikahmed-sudo/w3id.org/tree/master/eaifch/sparql [R=302,L]
