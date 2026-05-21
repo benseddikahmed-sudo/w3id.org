@@ -7,18 +7,17 @@
 Options +FollowSymLinks
 RewriteEngine on
 
-# Redirection par défaut → Documentation WIDOCO
-RewriteRule ^$ https://benseddikahmed-sudo.github.io/eaifch/ [R=302,L]
+# 1. Redirection par défaut (la racine renvoie vers votre dépôt principal)
+RewriteRule ^$ https://github.com/benseddikahmed-sudo/eaifch [R=303,L]
 
-# Redirections vers l'ontologie (versions lisibles)
-RewriteRule ^ontology$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.ttl [R=302,L]
-RewriteRule ^ontology\.ttl$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.ttl [R=302,L]
-RewriteRule ^ontology\.jsonld$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.jsonld [R=302,L]
-RewriteRule ^ontology\.rdf$ https://raw.githubusercontent.com/benseddikahmed-sudo/w3id.org/master/eaifch/eaifch.rdf [R=302,L]
+# 2. Redirections vers l'ontologie brute (Format Turtle pour Protégé)
+RewriteRule ^ontology$ https://raw.githubusercontent.com/benseddikahmed-sudo/eaifch/principal/eaifch/eaifch.ttl [R=303,L]
+RewriteRule ^ontology\.ttl$ https://raw.githubusercontent.com/benseddikahmed-sudo/eaifch/principal/eaifch/eaifch.ttl [R=303,L]
 
-# Documentation complète (WIDOCO)
-RewriteRule ^doc$ https://benseddikahmed-sudo.github.io/eaifch/ [R=302,L]
-RewriteRule ^doc/$ https://benseddikahmed-sudo.github.io/eaifch/ [R=302,L]
+# 3. Documentation HTML complète (Générée par WIDOCO via GitHub Pages)
+RewriteRule ^doc$ https://benseddikahmed-sudo.github.io/eaifch/eaifch/docs/eaifch/docs/index.html [R=303,L]
+RewriteRule ^doc/$ https://benseddikahmed-sudo.github.io/eaifch/eaifch/docs/eaifch/docs/index.html [R=303,L]
+RewriteRule ^doc/(.*)$ https://benseddikahmed-sudo.github.io/eaifch/eaifch/docs/eaifch/docs/$1 [R=303,L]
 
-# SPARQL examples
-RewriteRule ^sparql$ https://github.com/benseddikahmed-sudo/w3id.org/tree/master/eaifch/sparql [R=302,L]
+# 4. Exemples de requêtes SPARQL (Lien vers le dossier de scripts)
+RewriteRule ^sparql/$ https://github.com/benseddikahmed-sudo/eaifch/tree/principal/sparql [R=303,L]
